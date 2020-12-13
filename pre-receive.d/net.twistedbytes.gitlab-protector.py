@@ -172,7 +172,7 @@ class GitLabProtector:
         if(self.git_push_action is GitPushAction.BRANCH_NEW
         or self.git_push_action is GitPushAction.BRANCH_UPDATE):
             if not self.validate_file_permissions(): is_success = False
-            if not self.validate_file_sizes(): is_success = False
+            #if not self.validate_file_sizes(): is_success = False
 
         return is_success
 
