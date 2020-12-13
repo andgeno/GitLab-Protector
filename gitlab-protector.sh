@@ -539,7 +539,7 @@ function install_or_update_config_by_repo_hash() {
 function check_env_exit_on_fail() {
     if [[ ! -d "$DIR_GITLAB_HASHED_REPOS" ]]
     then
-        echo -e "\033[0;31;1mERROR:\033[0m GitLab directory with hashed repositories does not exist: \`\033[0;33;1m$DIR_GITLAB_HASHED_REPOS\033[0m'" >&2
+        echo -e "\033[0;31;1mERROR:\033[0m GitLab hashed storage directory not found: \`\033[0;33;1m$DIR_GITLAB_HASHED_REPOS\033[0m'" >&2
         exit 1
     fi
 }
@@ -625,6 +625,7 @@ case "$COMMAND" in
         do_status
         ;;
     uninstall|u)
+        check_env_exit_on_fail
         load_all
         do_uninstall_repo
         ;;
