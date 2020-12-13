@@ -47,6 +47,7 @@ function load_gitlab_repos() {
         cd "$DIR_GITLAB_HASHED_REPOS"
         find . -type f -name config \
             | grep -v '.wiki.git/' \
+            | grep -v '\+[0-9]+\+deleted.git/' \
             | xargs grep 'fullpath = ' \
             | sed -E 's|^./||;s|^(.+\.git)/config:\s+fullpath = (.+$)|\2\|\|\|\1|' \
             | grep -vE 'gitlab-instance-administrators-.+' \
