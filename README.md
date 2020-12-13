@@ -34,7 +34,7 @@ Files being protected means that from now on only a certain **group** of users a
 ```sh
 $ cd /opt/
 
-$ git clone git@github.com:andgeno/GitLab-Protector.git
+$ git clone https://github.com/andgeno/GitLab-Protector.git
 
 $ cd GitLab-Protector
 
@@ -44,7 +44,7 @@ $ ./gitlab-protector.sh --help
 You can move the `GitLab-Protector` directory to any location, e.g.: `/opt/GitLab-Protector/`.
 
 Please make sure to not move this directory after installing your first **GitLab Protector** hook because this will break the symlink that was created in this process.
-However, if you need to move its location later you can easily fix broken symlinks by running the command: `./gitlab-protector.sh fix` which will repair any broken hook symlinks.
+However, if you need to move its location later you can easily fix broken symlinks by running the command `./gitlab-protector.sh fix` which will repair any broken hook symlinks.
 
 ## Usage
 
