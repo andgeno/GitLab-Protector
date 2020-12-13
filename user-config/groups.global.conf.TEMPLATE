@@ -1,0 +1,13 @@
+## This file describes which users are member of what group.
+## Being in a grouop means to be able to bypass check rules that have been
+## configured in protector.files.conf.
+##
+## Format: <group>=<user1>,<user2>,...,<userN>
+##   1. One unique group name per line.
+##   2. Multiple user names are separated by a comma.
+##
+## Example:
+##
+##   admin=john,sally
+##
+

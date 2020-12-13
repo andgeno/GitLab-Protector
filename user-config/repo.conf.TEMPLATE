@@ -1,0 +1,38 @@
+## This file describes the files and directories that should be protected in
+## the repository using a regular expression as well as which group (of users)
+## is allowed to bypass that rule check.
+##
+## Format: <group>=<regex>
+##   1. One rule per line.
+##   2. Group names can appear in multiple lines to assign multiple rule
+##      checks to them.
+##
+## Example 1:
+## Two rules for the group 'admin'. The first protects a file in the root of
+## the repo, the second protects the 'scripts' directory and all its contents.
+##
+##   admin=^config.json$
+##   admin=^scripts/
+##
+## Example 2:
+## Two distinct groups that are allowed to modify files in their respective
+## directory.
+##
+##   artist=^images/
+##   coder=^source/
+##
+## NOTE:
+## All lines coming from git are always absolute paths starting from the git
+## repository root directory. These paths do NOT include a leading slash. A
+## common mistake is to write a check rules like these:
+##
+##    admin=^/protected-file.txt$
+##    admin=^/protected-dir/
+##
+## These rules will not work correctly because of the leading slash.
+## Correct patterns would look like this:
+##
+##    admin=^protected-file.txt$
+##    admin=^protected-dir/
+##
+
